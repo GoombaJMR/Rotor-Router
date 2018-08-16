@@ -1,0 +1,62 @@
+Graph g;
+StatList stats;
+
+Vertex A = Vertex("A",0,0,0); Vertex B = Vertex("B",0,0,0); Vertex C = Vertex("C",0,0,0); 
+Vertex D = Vertex("D",0,0,0); Vertex E = Vertex("E",0,0,0); Vertex F = Vertex("F",0,0,0); 
+Vertex G = Vertex("G",0,0,0); Vertex H = Vertex("H",0,0,0); Vertex I = Vertex("I",0,0,0); 
+
+Vertex *Ap = &A; Vertex *Bp = &B; Vertex *Cp = &C; Vertex *Dp = &D; Vertex *Ep = &E; 
+Vertex *Fp = &F; Vertex *Gp = &G; Vertex *Hp = &H; Vertex *Ip = &I; 
+
+Edge e1a(Ap, Bp, 0, "AB"); Edge e1b(Bp, Ap, 0, "BA"); 
+Edge e2a(Ap, Cp, 1, "AC"); Edge e2b(Cp, Ap, 1, "CA"); 
+Edge e3a(Bp, Cp, 2, "BC"); Edge e3b(Cp, Bp, 2, "CB"); 
+Edge e4a(Bp, Gp, 3, "BG"); Edge e4b(Gp, Bp, 3, "GB"); 
+Edge e5a(Cp, Dp, 4, "CD"); Edge e5b(Dp, Cp, 4, "DC"); 
+Edge e6a(Cp, Ep, 5, "CE"); Edge e6b(Ep, Cp, 5, "EC"); 
+Edge e7a(Cp, Fp, 6, "CF"); Edge e7b(Fp, Cp, 6, "FC"); 
+Edge e8a(Cp, Gp, 7, "CG"); Edge e8b(Gp, Cp, 7, "GC"); 
+Edge e9a(Cp, Hp, 8, "CH"); Edge e9b(Hp, Cp, 8, "HC"); 
+Edge e10a(Dp, Ip, 9, "DI"); Edge e10b(Ip, Dp, 9, "ID"); 
+Edge e11a(Ep, Fp, 10, "EF"); Edge e11b(Fp, Ep, 10, "FE"); 
+Edge e12a(Ep, Gp, 11, "EG"); Edge e12b(Gp, Ep, 11, "GE"); 
+
+Edge* e1aP = &e1a; Edge* e1bP = &e1b; 
+Edge* e2aP = &e2a; Edge* e2bP = &e2b; 
+Edge* e3aP = &e3a; Edge* e3bP = &e3b; 
+Edge* e4aP = &e4a; Edge* e4bP = &e4b; 
+Edge* e5aP = &e5a; Edge* e5bP = &e5b; 
+Edge* e6aP = &e6a; Edge* e6bP = &e6b; 
+Edge* e7aP = &e7a; Edge* e7bP = &e7b; 
+Edge* e8aP = &e8a; Edge* e8bP = &e8b; 
+Edge* e9aP = &e9a; Edge* e9bP = &e9b; 
+Edge* e10aP = &e10a; Edge* e10bP = &e10b; 
+Edge* e11aP = &e11a; Edge* e11bP = &e11b; 
+Edge* e12aP = &e12a; Edge* e12bP = &e12b; 
+
+A.addEdge(e1aP); A.addEdge(e2aP); 
+B.addEdge(e1bP); B.addEdge(e3aP); B.addEdge(e4aP);
+C.addEdge(e2bP); C.addEdge(e3bP); C.addEdge(e5aP);
+C.addEdge(e6aP); C.addEdge(e7aP); C.addEdge(e8aP); C.addEdge(e9aP);
+D.addEdge(e5bP); D.addEdge(e10aP);
+E.addEdge(e6bP); E.addEdge(e11aP); E.addEdge(e12aP);
+F.addEdge(e7bP); F.addEdge(e11bP);
+G.addEdge(e4bP); G.addEdge(e8bP); G.addEdge(e12bP);
+H.addEdge(e9bP);
+I.addEdge(e10bP);
+
+g.insertVertex(Ap); g.insertVertex(Bp); g.insertVertex(Cp); 
+g.insertVertex(Dp); g.insertVertex(Ep); g.insertVertex(Fp); 
+g.insertVertex(Gp); g.insertVertex(Hp); g.insertVertex(Ip); 
+g.insertEdge(e1aP); g.insertEdge(e1bP); 
+g.insertEdge(e2aP); g.insertEdge(e2bP); 
+g.insertEdge(e3aP); g.insertEdge(e3bP); 
+g.insertEdge(e4aP); g.insertEdge(e4bP); 
+g.insertEdge(e5aP); g.insertEdge(e5bP); 
+g.insertEdge(e6aP); g.insertEdge(e6bP); 
+g.insertEdge(e7aP); g.insertEdge(e7bP); 
+g.insertEdge(e8aP); g.insertEdge(e8bP); 
+g.insertEdge(e9aP); g.insertEdge(e9bP); 
+g.insertEdge(e10aP); g.insertEdge(e10bP); 
+g.insertEdge(e11aP); g.insertEdge(e11bP); 
+g.insertEdge(e12aP); g.insertEdge(e12bP); 

@@ -1,0 +1,69 @@
+//Defining Variables (Specifically, the graph used for all simulations)
+    Graph g;        //Currently empty
+    StatList stats; //Contains stabilization period data
+    
+    //Creating vertices and their respective pointers
+    Vertex A = Vertex("A", 0, 0, 0); Vertex B = Vertex("B", 0, 0, 0);
+    Vertex C = Vertex("C", 0, 0, 0); Vertex D = Vertex("D", 0, 0, 0);
+    Vertex E = Vertex("E", 0, 0, 0); Vertex F = Vertex("F", 0, 0, 0);
+    Vertex *Ap = &A; Vertex *Bp = &B; Vertex *Cp = &C;
+    Vertex *Dp = &D; Vertex *Ep = &E; Vertex *Fp = &F;
+    
+    //Creating edges (arcs) and their respective pointers
+    /*Constructor parameters: start vertex, end vertex
+                              id (undirected), name    */
+    Edge e1a(Ap, Bp, 0, "AB"); Edge e2a(Ap, Cp, 1, "AC");
+    Edge e3a(Ap, Dp, 2, "AD"); Edge e4a(Ap, Ep, 3, "AE");
+    Edge e1b(Bp, Ap, 0, "BA"); Edge e5a(Bp, Cp, 4, "BC");
+    Edge e6a(Bp, Dp, 5, "BD");
+    Edge e2b(Cp, Ap, 1, "CA"); Edge e5b(Cp, Bp, 4, "CB");
+    Edge e7a(Cp, Ep, 6, "CE"); Edge e8a(Cp, Fp, 7, "CF");
+    Edge e3b(Dp, Ap, 2, "DA"); Edge e6b(Dp, Bp, 5, "DB");
+    Edge e9a(Dp, Ep, 8, "DE"); Edge e10a(Dp, Fp, 9, "DF");
+    Edge e4b(Ep, Ap, 3, "EA"); Edge e7b(Ep, Cp, 6, "EC");
+    Edge e9b(Ep, Dp, 8, "ED"); Edge e11a(Ep, Fp, 10, "EF");
+    Edge e8b(Fp, Cp, 7, "FC"); Edge e10b(Fp, Dp, 9, "FD");
+    Edge e11b(Fp, Ep, 10, "FE");
+    Edge* e1aP = &e1a;  Edge* e1bP = &e1b;
+    Edge* e2aP = &e2a;  Edge* e2bP = &e2b;
+    Edge* e3aP = &e3a;  Edge* e3bP = &e3b;
+    Edge* e4aP = &e4a;  Edge* e4bP = &e4b;
+    Edge* e5aP = &e5a;  Edge* e5bP = &e5b;
+    Edge* e6aP = &e6a;  Edge* e6bP = &e6b;
+    Edge* e7aP = &e7a;  Edge* e7bP = &e7b;
+    Edge* e8aP = &e8a;  Edge* e8bP = &e8b;
+    Edge* e9aP = &e9a;  Edge* e9bP = &e9b;
+    Edge* e10aP = &e10a; Edge* e10bP = &e10b;
+    Edge* e11aP = &e11a; Edge* e11bP = &e11b;
+    
+    //Adding each directed edge (arc) into their respective vertices
+    A.addEdge(e1aP);  A.addEdge(e2aP);
+    A.addEdge(e3aP);  A.addEdge(e4aP);
+    B.addEdge(e1bP);  B.addEdge(e5aP);  B.addEdge(e6aP);
+    C.addEdge(e2bP);  C.addEdge(e5bP);
+    C.addEdge(e7aP);  C.addEdge(e8aP);
+    D.addEdge(e3bP);  D.addEdge(e6bP);
+    D.addEdge(e9aP);  D.addEdge(e10aP);
+    E.addEdge(e4bP);  E.addEdge(e7bP);
+    E.addEdge(e9bP);  E.addEdge(e11aP);
+    F.addEdge(e8bP);  F.addEdge(e10bP);  F.addEdge(e11bP);
+    
+    //Setting the next exit value for each vertex (randomly)
+    A.setIndex(A.getEdgeCount()); B.setIndex(B.getEdgeCount());
+    C.setIndex(C.getEdgeCount()); D.setIndex(D.getEdgeCount());
+    E.setIndex(E.getEdgeCount()); F.setIndex(F.getEdgeCount());
+    
+    //Inserting each vertex and edge (pointer(s)) into the graph
+    g.insertVertex(Ap); g.insertVertex(Bp); g.insertVertex(Cp);
+    g.insertVertex(Dp); g.insertVertex(Ep); g.insertVertex(Fp);
+    g.insertEdge(e1aP); g.insertEdge(e1bP);
+    g.insertEdge(e2aP); g.insertEdge(e2bP);
+    g.insertEdge(e3aP); g.insertEdge(e3bP);
+    g.insertEdge(e4aP); g.insertEdge(e4bP);
+    g.insertEdge(e5aP); g.insertEdge(e5bP);
+    g.insertEdge(e6aP); g.insertEdge(e6bP);
+    g.insertEdge(e7aP); g.insertEdge(e7bP);
+    g.insertEdge(e8aP); g.insertEdge(e8bP);
+    g.insertEdge(e9aP); g.insertEdge(e9bP);
+    g.insertEdge(e10aP); g.insertEdge(e10bP);
+    g.insertEdge(e11aP); g.insertEdge(e11bP);
